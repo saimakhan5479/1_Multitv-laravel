@@ -1,0 +1,58 @@
+.w-4 {
+  width: 1rem;
+}
+.h-4 {
+  height: 1rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+.h-6 {
+  height: 1.5rem;
+}
+
+.dropzone {
+  background: white;
+  border-radius: 5px;
+  border: 2px dashed rgb(0, 135, 247);
+  border-image: none;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card
+{
+    padding: 20px;
+}
+a{
+    border-radius:5px !important;
+}
+td img{
+    border-radius: 50px;
+    height: 80px;
+    width: 80px;
+}
+hr{
+
+
+border: 0.2px solid #e6e9ed;
+ border-top: 0.2px solid #e6e9ed;
+ width:100%;
+  margin: 20px 0;
+
+}
+.btnn .btn{
+    font-size:1.0rem;
+     border-radius: 15px;
+     color: #fff;
+      background-color: #3CB080;
+      border-color: #3CB080;
+       width:74%;
+}
+.a_btnn .btn{
+    background-color: #3CB080;
+      border-color: #3CB080;
+      font-size: 0.812rem;
+       border-radius: 15px;
+}
