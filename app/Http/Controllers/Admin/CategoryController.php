@@ -28,7 +28,7 @@ class CategoryController extends Controller
         $data->ordering=$request['ordering'];
         $data->status= $request['status']??'Inactive';
         $data->save();
-       return redirect('category/category_show')->with('message','Data added Successfully');
+       return redirect('category/category_show')->with('message','Category Data added Successfully');
     }
 
     public function category_show(){
@@ -44,7 +44,7 @@ class CategoryController extends Controller
 
         $data = Category::find($id)->delete();
         // return view('admin.category_add');
-        return redirect()->back()->with('error','Data Deleted Successfully!');
+        return redirect()->back()->with('error','Category Data Deleted Successfully!');
     }
 
     public function category_update($id){
@@ -59,7 +59,7 @@ class CategoryController extends Controller
         $data->ordering=$request['ordering'];
         $data->status= $request['status']??'Inactive';
         $data->save();
-        return redirect('/category/category_smt_show')->with('info','Data Updated Successfully');
+        return redirect('/category/category_smt_show')->with('info','Category Data Updated Successfully');
         // return view('admin.category_show');
     }
 
@@ -70,7 +70,7 @@ class CategoryController extends Controller
     $category->status = $category->status === 'Active' ? 'Inactive' : 'Active';
     $category->save();
 
-    return response()->json(['success' => true,'message' => 'Status changed successfully']);
+    return response()->json(['success' => true,'message' => 'Category Status changed successfully']);
 }
 
 

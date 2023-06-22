@@ -24,6 +24,8 @@ class AdminController extends Controller
 
                 //return redirect()->route('admin.dashboard');
                 $admin =  Auth::guard('admin')->user();
+            
+
                 if ($admin->role == 2) {
                     // return redirect()->route('admin.dashboard');
                     return redirect()->route('admin.dashboard')->with('message','You logged in Successfully');
@@ -37,6 +39,7 @@ class AdminController extends Controller
                 // return redirect()->route('admin.login')->with('error','Email/Password is incorrect');
                 return redirect()->route('admin.login')->with('error','Either Email/Password is Incorrect, Please Checked it Again');
             }
+
         } else {
             return redirect()->route('admin.login')->withErrors($validator)->withInput($request->only('email'));
         }

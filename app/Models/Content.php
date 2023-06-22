@@ -19,4 +19,8 @@ class Content extends Model
         'poster_image',
         'image'
     ];
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

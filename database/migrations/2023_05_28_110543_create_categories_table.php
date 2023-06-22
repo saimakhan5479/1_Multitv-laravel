@@ -17,6 +17,15 @@ return new class extends Migration
             $table->string('ordering')->nullable();
             $table->string('status')->default('Active');
             $table->timestamps();
+
+
+            // Foreign key relationship(In This Project we did this manually in database ** by clicking on(Relation view) on top side and add that -- delete ->restrict * update->cascade (constrain properties) )
+            // $table->foreign('category_id')
+            //       ->references('id')
+            //       ->on('categories')
+            //       ->onDelete('cascade');
+
+            // $table->timestamps();
         });
     }
 

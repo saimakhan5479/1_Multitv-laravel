@@ -42,7 +42,7 @@ public function store(Request $request){
         'image'=> $image_name,
     ]);
 
-    return redirect('/banner/banner_show')->with('message','Data Added Successfully');
+    return redirect('/banner/banner_show')->with('message','Banner Data Added Successfully');
 }
 public function banner_show(){
     $data = Banner::all();
@@ -51,7 +51,7 @@ public function banner_show(){
     }
     public function destroy($id){
         $data = Banner::find($id)->delete();
-        return redirect()->back()->with('error','Data Deleted Successfully');
+        return redirect()->back()->with('error','Banner Data Deleted Successfully');
     }
     public function update($id){
         $data = Banner::find($id);
@@ -73,7 +73,7 @@ public function banner_show(){
             $data->image=$image_name;
         }
         $data->save();
-        return redirect('/banner/banner_show')->with('info','Data Updated Successfully');
+        return redirect('/banner/banner_show')->with('info','Banner Data Updated Successfully');
     }
     public function updateStatus(Request $request)
     {
@@ -81,6 +81,6 @@ public function banner_show(){
         $banner->status = $banner->status === 'Active' ? 'Inactive' : 'Active';
         $banner->save();
 
-        return response()->json(['success' => true,'message' => 'Status changed successfully']);
+        return response()->json(['success' => true,'message' => 'Banner Status changed successfully']);
     }
 }

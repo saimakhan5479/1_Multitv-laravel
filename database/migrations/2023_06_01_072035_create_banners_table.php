@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('live_tv')->nullable();
             $table->string('title')->nullable();
             $table->string('ordering')->nullable();
+            $table->string('description')->nullable();
             $table->string('status')->default('Active');
+            $table->string('poster_image')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

@@ -9,6 +9,7 @@
     <!-- Main content -->
     <section class="content">
         <!-- Default box -->
+
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
@@ -17,9 +18,15 @@
                             <div class="col-sm-6">
                                 <h4>Feedback List</h4>
                             </div>
+                            <div class="col-sm-6 text-right a_btnn">
+                                <a href="{{ route('feedback.feedback_create') }}" class="pull-right btn btn-success btn-lg"><i
+                                        class="fa fa-plus"></i> Add New</a>
+                            </div>
                         </div>
                     </div>
+
                 </div>
+
                 <hr>
                 <div class="card-body table-responsive p-0">
                     <table id="myTable" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer"

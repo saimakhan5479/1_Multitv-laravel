@@ -68,7 +68,7 @@
                                 <tr>
                                     <td>{{ $d->id }}</td>
                                     <td>{{ $d->name }}</td>
-                                    <td>{{ $d->category }}</td>
+                                    <td>{{ $d->category->name ?? '' }}</td>
                                     <td>{{ $d->ordering }}</td>
                                     <td><img height="70" width="70" src="{{ asset('all_images/' . $d->image) }}"
 

@@ -14,3 +14,4 @@ class Feedback extends Model
         'message',
     ];
 }
+

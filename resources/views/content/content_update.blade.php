@@ -65,12 +65,14 @@
                                 @enderror
                             </div>
                             <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="category">Category</label>
-                                    <input type="text" name="category" value="{{ $data->category }}" id="category"
-                                        class="form-control {{ $errors->has('category') ? 'is-invalid' : '' }}"
-                                        placeholder="category">
-                                </div>
+                                <label for="category">Category</label>
+                                <select name="category" id="category"
+                                                class="form-control {{ $errors->has('category') ? 'is-invalid' : '' }}">
+                                                <option>---Select Your Category---</option>
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}" {{ $category->id == $data->category_id ? 'selected' :''}}>{{ $category->name }}</option>
+                                                @endforeach
+                                            </select>
                                 @error('category')
                                     <p class="invalid-feedback">{{ $message }}</p>
                                 @enderror

@@ -20,7 +20,7 @@ class ContentController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'category' => 'required',
+            'category_id' => 'required',
             'ordering' => 'required',
             'overview' => 'required',
             'link' => 'required',
@@ -33,11 +33,11 @@ class ContentController extends Controller
             $image_name = time() . '.' . $image->getClientOriginalExtension();
             $request->file->move('all_images', $image_name);
         }
-       
+
         $data = Content::create([
             // $data = new Content();([])
             'name' => $request['name'],
-            'category' => $request['category'],
+            'category_id' => $request['category'],
             'ordering' => $request['ordering'],
             'overview' => $request['overview'],
             'link' => $request['link'],
@@ -63,13 +63,14 @@ class ContentController extends Controller
     public function update($id)
     {
         $data = Content::find($id);
-        return view('content.content_update', compact('data'));
+        $categories = Category::where('status', 'Active')->get();
+        return view('content.content_update', compact('data','categories'));
     }
     public function edit($id, Request $request)
     {
         $data = Content::find($id);
         $data->name = $request['name'];
-        $data->category = $request['category'];
+        $data->category_id = $request['category'];
         $data->link = $request['link'];
         $data->overview = $request['overview'];
         $data->ordering = $request['ordering'];
