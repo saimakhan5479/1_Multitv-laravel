@@ -28,7 +28,7 @@ $data =Setting::updateOrInsert(['key' => 'inter_id'], [
     'updated_at' => now(),
 ]);
 
-return redirect()->back()->with('message','Successfully Updated!!');
+return redirect()->back()->with('message','Setting Successfully Updated!!');
 
 }
 }

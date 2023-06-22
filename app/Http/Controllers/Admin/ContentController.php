@@ -48,7 +48,7 @@ class ContentController extends Controller
             // $data->save();
         ]);
         // dd($request->all());
-        return redirect('content/content_show')->with('message', 'Data Added Successfully');
+        return redirect('content/content_show')->with('message', 'Content Added Successfully');
     }
     public function content_show()
     {
@@ -58,7 +58,7 @@ class ContentController extends Controller
     public function destroy($id)
     {
         $data = Content::find($id)->delete();
-        return redirect()->back()->with('error', 'Data Deleted Successfully');
+        return redirect()->back()->with('error', 'Content Deleted Successfully');
     }
     public function update($id)
     {
@@ -86,14 +86,14 @@ class ContentController extends Controller
         // dd($data);
 
         $data->save();
-        return redirect('content/content_show')->with('info', 'Data Updated Successfully');
+        return redirect('content/content_show')->with('info', 'Content Data Updated Successfully');
     }
     public function updateStatus(Request $request)
     {
         $contentt = Content::find($request->id);
         $contentt->status = $contentt->status === 'Active' ? 'Inactive' : 'Active';
         $contentt->save();
-        return response()->json(['success' => true, 'message' => 'Status changed successfully']);
+        return response()->json(['success' => true, 'message' => 'Content Status changed successfully']);
     }
     public function updateLive(Request $request)
     {

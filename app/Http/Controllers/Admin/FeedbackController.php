@@ -26,7 +26,7 @@ class FeedbackController extends Controller
          $data->subject=$request['subject'];
          $data->message= $request['message'];
          $data->save();
-        return redirect('feedback/feedback_show')->with('message','Data added Successfully');
+        return redirect('feedback/feedback_show')->with('message','Feedback added Successfully');
      }
     public function feedback_show(){
         $data=Feedback::all();
@@ -34,7 +34,7 @@ class FeedbackController extends Controller
     }
     public function destroy($id){
         $data = FeedBack::find($id)->delete();
-        return redirect()->back()->with('error','Deleted Successfully');
+        return redirect()->back()->with('error','Feedback Deleted Successfully');
     }
 
 }

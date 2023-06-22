@@ -75,14 +75,14 @@ class ApiContentController extends Controller
         $content = Content::find($id);
         if(is_null ($content)){
         $response =[
-            'message'=>'No Cotent Found',
+            'message'=>'No Content Found',
             'status'=>0,
         ];
     }
     else{
         $content->image=$content->image?asset('all_images').'/'.$content->image:"";
         $response = [
-            'message'=>'Cotent Exists',
+            'message'=>'Content Exists',
             'data'=>$content,
             'status'=>1,
         ];
@@ -97,7 +97,7 @@ class ApiContentController extends Controller
 
         if(count($content)>0){
             $response =[
-                'message'=>count($content).'User are Exists',
+                'message'=>count($content).'Content Found',
                 'status'=>1,
                 'data'=>$content,
             ];
@@ -105,7 +105,7 @@ class ApiContentController extends Controller
         }
         else{
             $response=[
-                'message'=>count($content).'No User Exists',
+                'message'=>count($content).'No Content Exists',
                 'status'=>0,
             ];
         }

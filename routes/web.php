@@ -93,7 +93,7 @@ Route::group(['middleware' => 'admin.auth'], function () {
 
     //FeedBack Routes
 
-         Route::get('feedback/feedback_create',[FeedbackController::class,'feedback_create'])->name('feedback.feedback_create');
+         Route::get('/feedback/feedback_create',[FeedbackController::class,'feedback_create'])->name('feedback.feedback_create');
         Route::post('/feedback_store',[FeedbackController::class,'feedback_store'])->name('feedback.feedback_store');
         Route::get('/feedback/feedback_show', [FeedbackController::class, 'feedback_show'])->name('feedback.feedback_show');
         Route::get('/feedback/feedback_delete/{id}', [FeedbackController::class, 'destroy'])->name('feedback.feedback_delete');

@@ -39,7 +39,7 @@ class NotificationController extends Controller
 
         ]);
         $d=compact('data');
-        return redirect('/notification/notification_show')->with('message','Data Added successfully');
+        return redirect('/notification/notification_show')->with('message','Notification Added successfully');
     }
 
 

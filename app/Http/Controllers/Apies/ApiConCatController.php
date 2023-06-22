@@ -15,7 +15,7 @@ class ApiConCatController extends Controller
 
         if(count($concat)>0){
             $response =[
-                'message'=>count($concat).'User are Exists',
+                'message'=>count($concat).'Found',
                 'status'=>1,
                 'data'=>$concat,
             ];
@@ -23,7 +23,7 @@ class ApiConCatController extends Controller
         }
         else{
             $response=[
-                'message'=>count($concat).'No User Exists',
+                'message'=>count($concat).'Nothing Exists',
                 'status'=>0,
             ];
         }

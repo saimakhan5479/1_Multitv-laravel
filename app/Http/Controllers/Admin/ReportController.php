@@ -14,6 +14,6 @@ class ReportController extends Controller
    }
    public function destroy($id){
     $d = Report::find($id)->delete();
-    return redirect()->back()->with('error','Data Deleted Successfully');
+    return redirect()->back()->with('error','Report Deleted Successfully');
    }
 }
